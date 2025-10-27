@@ -8,3 +8,4 @@ safetensors
 audiomentations
 Pillow
 pyctcdecode
+torchcodec

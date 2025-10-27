@@ -14,9 +14,9 @@ class AudioEncoder(nn.Module):
         self.processor = Wav2Vec2Processor.from_pretrained(model_name)
         self.model.freeze_feature_encoder()
 
-        if hasattr(self.model, 'wav2vec2') and hasattr(self.model, 'masked_spec_embed'):
-            if self.model.masked_spec_embed is not None:
-                nn.init.uniform_(self.model.masked_spec_embed.data, a=-0.01, b=0.01)
+        if self.model.masked_spec_embed is not None:
+            nn.init.uniform_(self.model.masked_spec_embed.data, a=-0.01, b=0.01)
+            print("masked_spec_embed is initialized")
                 
         self._device = device
         

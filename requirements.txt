@@ -9,3 +9,4 @@ audiomentations
 Pillow
 pyctcdecode
 torchcodec
+jiwer

@@ -1,10 +1,11 @@
-from src.model import VisionConditionedASR
 from transformers import AutoTokenizer
 import torchaudio
 import torch
 from PIL import Image
 import numpy as np
 import os
+
+from model import VisionConditionedASR
 
 
 def count_parameters(model, module_name="Model"):

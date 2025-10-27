@@ -76,7 +76,7 @@ class TrainingConfig:
     log_step: int = 50  # ステップごと
     validate_epoch: int = 1  # エポックごと
     use_wandb: bool = True  # wandbの使用/不使用
-    wandb_project: str = "VisionConditionedASR"
+    wandb_project: str = "VisionConditionedASRv2"
 
 
 class NoiseAugmenter:

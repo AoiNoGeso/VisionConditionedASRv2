@@ -16,7 +16,6 @@ class AudioEncoder(nn.Module):
 
         if self.model.masked_spec_embed is not None:
             nn.init.uniform_(self.model.masked_spec_embed.data, a=-0.01, b=0.01)
-            print("masked_spec_embed is initialized")
                 
         self._device = device
         

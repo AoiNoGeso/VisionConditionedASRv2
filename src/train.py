@@ -28,7 +28,7 @@ class TrainingConfig:
     dropout: float = 0.1
     
     batch_size: int = 16
-    num_epochs: int = 10
+    num_epochs: int = 20
     learning_rate: float = 1e-5
     weight_decay: float = 1e-5
     gradient_clip: float = 1.0
@@ -51,9 +51,9 @@ class TrainingConfig:
     use_amp: bool = True  # Automatic Mixed Precision
     amp_dtype: str = "float16"  # "float16" or "bfloat16"
     
-    checkpoint_dir: str = "../checkpoints/DINOv2_model"
+    checkpoint_dir: str = "/checkpoints/DINOv2_model"
     save_epoch: int = 1
-    resume_from: Optional[str] = None  # e.g., "../checkpoints/pure_cross/epoch_5"
+    resume_from: Optional[str] = "checkpoints/DINOv2_model/epoch_10"  # None, "../checkpoints/pure_cross/epoch_5"
     device: str = "cuda:1"  # "cuda:0", "cuda:1", "cpu"
     
     log_step: int = 50

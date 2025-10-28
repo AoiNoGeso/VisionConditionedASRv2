@@ -15,11 +15,12 @@ from audiomentations import Compose, AddGaussianSNR, AddBackgroundNoise, AddGaus
 from model import VisionConditionedASR
 # from purewav2vec2_train import PureWav2Vec2ASR
 from dataloader import create_dataloader
+from train import TrainingConfig
 
 
 @dataclass
 class TestConfig:
-    checkpoint_dir: str = "../checkpoints/DINOv2_model/epoch_2"
+    checkpoint_dir: str = "checkpoints/DINOv2_model/epoch_10"
     model_type: str = "vision"  # "pure" or "vision"
     
     val_json: str = "../../Datasets/SpokenCOCO/SpokenCOCO_val_fixed.json"
@@ -35,7 +36,7 @@ class TestConfig:
     max_audio_length: float = 10.0
     validate_files: bool = True
     
-    noise_type: str = "none"  # "none", "gaussian", "white", "background"
+    noise_type: str = "white"  # "none", "gaussian", "white", "background"
     noise_dir: Optional[str] = "../../Datasets/noise"
     gaussian_snr_db: tuple = (5, 20)
     white_noise_level: float = 0.01
@@ -43,11 +44,11 @@ class TestConfig:
     
     use_beam_search: bool = True
     beam_width: int = 10
-    use_image: bool = False
+    use_image: bool = True
     
     device: str = "cuda:0"
     save_results: bool = True
-    results_dir: str = "../results/"
+    results_dir: str = "results/"
 
 
 class NoiseAugmenter:
